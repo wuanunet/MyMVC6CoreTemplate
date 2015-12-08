@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using MyMVC6Template.Core.Interfaces.Services;
+using MyMVC6Template.Core.Models.DTOs;
 
 namespace MyMVC6Template.Web.Controllers.Api
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class MyInfoController : Controller
     {
+        private IMyInfoService _myInfoService;
+
+        public MyInfoController(IMyInfoService myInfoService)
+        {
+            this._myInfoService = myInfoService;
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public PersonViewModel Get()
         {
-            return new string[] { "value1", "value2" };
+            var info = this._myInfoService.GetInfo();
+            return info;
         }
 
         // GET api/values/5
