@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyMVC6Template.Core.Interfaces.Services;
 using MyMVC6Template.Core.Services;
+using MyMVC6Template.Core.Common;
 
 namespace MyMVC6Template.Web
 {
@@ -21,6 +22,7 @@ namespace MyMVC6Template.Web
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+            AppHelper.Configuration = Configuration;
         }
 
         public IConfigurationRoot Configuration { get; set; }
