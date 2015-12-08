@@ -10,23 +10,21 @@ using Microsoft.Extensions.Logging;
 using MyMVC6Template.Core.Interfaces.Services;
 using MyMVC6Template.Core.Services;
 using MyMVC6Template.Core.Common;
+using MyMVC6Template.Core.Repositories;
+using MyMVC6Template.Core.Interfaces.Repositories;
 
 namespace MyMVC6Template.Web
 {
     public class Startup
     {
+        //public IConfigurationRoot Configuration { get; set; }
+        private IServiceCollection _Services;
+
         public Startup(IHostingEnvironment env)
         {
             // Set up configuration sources.
-            var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
-            AppHelper.Configuration = Configuration;
+            //AppHelper.InitAppConfiguration();
         }
-
-        public IConfigurationRoot Configuration { get; set; }
-        private IServiceCollection _Services;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -35,19 +33,31 @@ namespace MyMVC6Template.Web
             // Add framework services.
             services.AddMvc();
 
+            // Add DbContext
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<MyDbContext>();
+
             //Dependency Injection
             DependencyInjection();
         }
 
         private void DependencyInjection()
         {
+            //services
             this._Services.AddTransient<IMyInfoService, MyInfoService>();
+
+            //repositories
+            this._Services.AddTransient<IMyInfoRepository, MyInfoRepository>();
+
+            //others
+            //this._Services.AddScoped<MyDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(AppHelper.Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             app.UseIISPlatformHandler();

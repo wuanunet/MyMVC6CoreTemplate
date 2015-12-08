@@ -20,7 +20,7 @@ namespace MyMVC6Template.Web.Controllers.Api
 
         // GET: api/values
         [HttpGet]
-        public PersonViewModel Get()
+        public IList<PersonViewModel> Get()
         {
             var info = this._myInfoService.GetInfo();
             return info;

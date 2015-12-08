@@ -8,7 +8,7 @@ namespace MyMVC6Template.Core.Interfaces.Services
 {
     public interface IMyInfoService
     {
-        PersonViewModel GetInfo();
+        IList<PersonViewModel> GetInfo();
     }
 }
 

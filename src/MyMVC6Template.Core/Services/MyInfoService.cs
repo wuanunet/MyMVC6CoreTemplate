@@ -1,4 +1,5 @@
-﻿using MyMVC6Template.Core.Interfaces.Services;
+﻿using MyMVC6Template.Core.Interfaces.Repositories;
+using MyMVC6Template.Core.Interfaces.Services;
 using MyMVC6Template.Core.Models.DTOs;
 using System;
 using System.Collections.Generic;
@@ -9,19 +10,27 @@ namespace MyMVC6Template.Core.Services
 {
     public class MyInfoService : IMyInfoService
     {
+        private IMyInfoRepository _myInfoRepository;
 
-        public PersonViewModel GetInfo()
+        public MyInfoService(IMyInfoRepository myInfoRepository)
         {
+            this._myInfoRepository = myInfoRepository;
+        }
 
-            var pv = new PersonViewModel()
-            {
-                Name = "Bibby Chung",
-                Age = 22,
-                Birthday = DateTime.Now.AddDays(30)
-            };
+        public IList<PersonViewModel> GetInfo()
+        {
+            var data = _myInfoRepository.GetPersons();
+       
+            return data.Select(a =>
+             {
+                 var newP = new PersonViewModel();
+                 newP.Name = a.Name;
+                 newP.Age = a.Age;
+                 newP.Birthday = a.Birthday;
+                 return newP;
 
-            return pv;
-
+             }).ToList();
+           
         }
 
     }

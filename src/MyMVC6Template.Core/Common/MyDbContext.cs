@@ -9,11 +9,17 @@ namespace MyMVC6Template.Core.Common
 {
     public class MyDbContext : DbContext
     {
+        public MyDbContext()
+        {
+            Database.EnsureCreated();
+        }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var conncectionString = AppHelper.Configuration["Data:ConnectionString"];
             optionsBuilder.UseSqlServer(conncectionString);
-            
+
             base.OnConfiguring(optionsBuilder);
         }
 
