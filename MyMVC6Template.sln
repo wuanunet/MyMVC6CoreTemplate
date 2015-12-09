@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{982574DD-1B32-42CA-B01B-71AEEB736878}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A5DDBCF-F524-456D-892B-ECA6B7F8AE37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Others", "3.Others", "{6A5DDBCF-F524-456D-892B-ECA6B7F8AE37}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
@@ -13,6 +11,10 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6Template.Core", "src\Core\MyMVC6Template.Core.xproj", "{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6Template.Web", "src\Web\MyMVC6Template.Web.xproj", "{9CAB7522-9329-417C-B28E-FF7736477662}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Src", "1.Src", "{B5F5599A-7F4C-4148-B91A-46D76AD94B02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Test", "2.Test", "{66BF8465-4748-431C-8A4A-D6AA70B18BE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,7 +35,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A} = {982574DD-1B32-42CA-B01B-71AEEB736878}
-		{9CAB7522-9329-417C-B28E-FF7736477662} = {982574DD-1B32-42CA-B01B-71AEEB736878}
+		{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A} = {B5F5599A-7F4C-4148-B91A-46D76AD94B02}
+		{9CAB7522-9329-417C-B28E-FF7736477662} = {B5F5599A-7F4C-4148-B91A-46D76AD94B02}
 	EndGlobalSection
 EndGlobal
