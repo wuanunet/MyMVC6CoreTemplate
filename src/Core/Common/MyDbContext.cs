@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace MyMVC6Template.Core.Common
 {
+    //http://ef.readthedocs.org/en/latest/getting-started/aspnet5/new-db.html
     public class MyDbContext : DbContext
     {
-        public MyDbContext()
-        {
-            Database.EnsureCreated();
-        }
-
+        public MyDbContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -11,10 +11,9 @@ namespace MyMVC6Template.Core.Common
 {
     public class AppHelper
     {
-        
+        public static string RootPath { get; set; }
 
-
-        public static IConfigurationRoot Configuration { get; set; } =
+        public static IConfigurationRoot Configuration { get; set; } = 
             new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
     }
 }

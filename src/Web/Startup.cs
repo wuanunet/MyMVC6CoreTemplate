@@ -22,6 +22,7 @@ namespace MyMVC6Template.Web
 
         public Startup(IHostingEnvironment env)
         {
+            AppHelper.RootPath = env.WebRootPath;
             // Set up configuration sources.
             //AppHelper.InitAppConfiguration();
         }
