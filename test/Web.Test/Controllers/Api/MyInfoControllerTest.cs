@@ -17,7 +17,7 @@ namespace MyMVC6CoreTemplate.Web.Test.Controllers.Api
         public MyInfoControllerTest()
         {
             _server = new TestServer(TestServer.CreateBuilder()
-                .UseStartup<Startup>());
+                .UseStartup<StartupFake>());
             _client = _server.CreateClient();
         }
 
@@ -25,17 +25,29 @@ namespace MyMVC6CoreTemplate.Web.Test.Controllers.Api
         public async Task ReturnHelloWorld()
         {
             // Arrange
-            var obj = new List<PersonViewModel>();
-            var expected = JsonConvert.SerializeObject(obj);
+            var age = 50;
+            var name = "Bibby";
+            var expectedObj = new List<PersonViewModel>() {
+                new PersonViewModel() {
+                    Name=name+"1",
+                    Age=age-1
+                },
+                new PersonViewModel() {
+                    Name=name+"2",
+                    Age=age-2
+                }
+            };
             var path = "/Api/MyInfo";
 
             // Act
             var req = await _client.GetAsync(path);
             req.EnsureSuccessStatusCode();
             var actual = await req.Content.ReadAsStringAsync();
+            var actualObj = JsonConvert.DeserializeObject<List<PersonViewModel>>(actual);
 
             // Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expectedObj.First().Name, actualObj.First().Name);
+            Assert.Equal(expectedObj.First().Age, actualObj.First().Age);
         }
 
     }

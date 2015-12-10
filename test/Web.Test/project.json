@@ -24,7 +24,8 @@
     "LightMock.vNext": "1.0.1",
     "Microsoft.AspNet.TestHost": "1.0.0-rc1-final",
     "Web": "1.0.0-*",
-    "Newtonsoft.Json": "8.0.1-beta3"
+    "Newtonsoft.Json": "8.0.1-beta3",
+    "Core.Test": "1.0.0-*"
   },
   "commands": {
     "test": "xunit.runner.dnx"

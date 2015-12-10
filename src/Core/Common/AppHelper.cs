@@ -13,7 +13,19 @@ namespace MyMVC6CoreTemplate.Core.Common
     {
         public static string RootPath { get; set; }
 
-        public static IConfigurationRoot Configuration { get; set; } = 
-            new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        private static IConfigurationRoot _configuration;
+
+        public static IConfigurationRoot Configuration
+        {
+            get
+            {
+                if (_configuration == null)
+                    AppHelper._configuration = new ConfigurationBuilder()
+                                                    .AddJsonFile("appsettings.json")
+                                                    .Build();
+                return AppHelper._configuration;
+            }
+        }
+
     }
 }

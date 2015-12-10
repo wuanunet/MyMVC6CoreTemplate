@@ -20,44 +20,26 @@ namespace MyMVC6CoreTemplate.Core.Test.Services
         void TestGetInfo()
         {
             //arrage
-            var repMock = new MockContext<IMyInfoRepository>();
-            var guid1 = Guid.NewGuid();
-            var guid2 = Guid.NewGuid();
-            var dd = DateTime.Now;
             var age = 50;
             var name = "Bibby";
-            repMock.Arrange(a => a.GetPersons())
-                .Returns(() =>
-                {
-                    return new[] {
-                        new Person {
-                            Id=guid1,
-                            Name=name+"1",
-                            Age=age-1,
-                            Birthday=dd.AddYears(-1),
-                            Created=dd.AddDays(-1)
-                        },
-                        new Person {
-                            Id=guid2,
-                            Name=name+2,
-                            Age=age-2,
-                            Birthday=dd.AddYears(-2),
-                            Created=dd.AddDays(-2)
-                        }
-
-                    }.ToList();
-                });
+            var repFake = new MyInfoRepositoryMock();
+            var mock = repFake.Mock;
 
             //act
-            var ser = new MyInfoService(new MyInfoRepositoryMock(repMock));
+            var ser = new MyInfoService(repFake);
             var actual = ser.GetInfo();
 
             //assert
             Assert.Equal(2, actual.Count);
-            repMock.Assert(a => a.GetPersons(), Invoked.Once);
-            var item = actual.First();
-            Assert.Equal(name + "1", item.Name);
-            Assert.Equal(age - 1, item.Age);
+            mock.Assert(a => a.GetPersons(), Invoked.Once);
+
+            var item1 = actual.First();
+            Assert.Equal(name + "1", item1.Name);
+            Assert.Equal(age - 1, item1.Age);
+
+            var item2 = actual.Skip(1).First();
+            Assert.Equal(name + "2", item2.Name);
+            Assert.Equal(age - 2, item2.Age);
 
         }
 

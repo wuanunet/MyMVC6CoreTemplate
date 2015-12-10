@@ -1,19 +1,19 @@
-﻿using System;
+﻿using LightMock;
+using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using MyMVC6CoreTemplate.Core.Common;
+using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
+using MyMVC6CoreTemplate.Core.Interfaces.Services;
+using MyMVC6CoreTemplate.Core.Repositories;
+using MyMVC6CoreTemplate.Core.Services;
+using MyMVC6CoreTemplate.Core.Test.Mocks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using MyMVC6CoreTemplate.Core.Interfaces.Services;
-using MyMVC6CoreTemplate.Core.Services;
-using MyMVC6CoreTemplate.Core.Common;
-using MyMVC6CoreTemplate.Core.Repositories;
-using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
 
-namespace MyMVC6CoreTemplate.Web
+namespace MyMVC6CoreTemplate.Web.Test
 {
     public class StartupFake
     {
@@ -49,18 +49,15 @@ namespace MyMVC6CoreTemplate.Web
             this._Services.AddTransient<IMyInfoService, MyInfoService>();
 
             //repositories
-            this._Services.AddTransient<IMyInfoRepository, MyInfoRepository>();
+            this._Services.AddTransient<IMyInfoRepository, MyInfoRepositoryMock>();
 
             //others
-            //this._Services.AddScoped<MyDbContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole(AppHelper.Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
             app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
