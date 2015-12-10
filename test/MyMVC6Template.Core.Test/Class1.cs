@@ -2,6 +2,7 @@
 
 namespace MyFirstDnxUnitTests
 {
+    //http://xunit.github.io/docs/getting-started-dnx.html
     //https://xunit.github.io/docs/getting-started-dnx.html
     public class Class1
     {
@@ -14,7 +15,7 @@ namespace MyFirstDnxUnitTests
         [Fact]
         public void FailingTest()
         {
-            Assert.Equal(5, Add(2, 3));
+            Assert.Equal(5, Add(2, 2));
         }
 
         int Add(int x, int y)
