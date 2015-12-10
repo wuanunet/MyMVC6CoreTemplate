@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.IO;
 
-namespace MyMVC6Template.Core.Common
+namespace MyMVC6CoreTemplate.Core.Common
 {
     public class AppHelper
     {

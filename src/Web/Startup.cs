@@ -7,13 +7,13 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MyMVC6Template.Core.Interfaces.Services;
-using MyMVC6Template.Core.Services;
-using MyMVC6Template.Core.Common;
-using MyMVC6Template.Core.Repositories;
-using MyMVC6Template.Core.Interfaces.Repositories;
+using MyMVC6CoreTemplate.Core.Interfaces.Services;
+using MyMVC6CoreTemplate.Core.Services;
+using MyMVC6CoreTemplate.Core.Common;
+using MyMVC6CoreTemplate.Core.Repositories;
+using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
 
-namespace MyMVC6Template.Web
+namespace MyMVC6CoreTemplate.Web
 {
     public class Startup
     {

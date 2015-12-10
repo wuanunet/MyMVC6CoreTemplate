@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity.Metadata.Internal;
 
-namespace MyMVC6Template.Core.Models.Entities
+namespace MyMVC6CoreTemplate.Core.Models.Entities
 {
     public class Person
     {

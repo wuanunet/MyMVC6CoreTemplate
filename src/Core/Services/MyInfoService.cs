@@ -1,12 +1,12 @@
-﻿using MyMVC6Template.Core.Interfaces.Repositories;
-using MyMVC6Template.Core.Interfaces.Services;
-using MyMVC6Template.Core.Models.DTOs;
+﻿using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
+using MyMVC6CoreTemplate.Core.Interfaces.Services;
+using MyMVC6CoreTemplate.Core.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyMVC6Template.Core.Services
+namespace MyMVC6CoreTemplate.Core.Services
 {
     public class MyInfoService : IMyInfoService
     {

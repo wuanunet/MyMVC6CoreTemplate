@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyMVC6Template.Core.Models.DTOs
+namespace MyMVC6CoreTemplate.Core.Models.DTOs
 {
     public class PersonViewModel
     {

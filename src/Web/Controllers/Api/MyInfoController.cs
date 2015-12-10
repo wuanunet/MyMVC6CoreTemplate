@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using MyMVC6Template.Core.Interfaces.Services;
-using MyMVC6Template.Core.Models.DTOs;
+using MyMVC6CoreTemplate.Core.Interfaces.Services;
+using MyMVC6CoreTemplate.Core.Models.DTOs;
 
-namespace MyMVC6Template.Web.Controllers.Api
+namespace MyMVC6CoreTemplate.Web.Controllers.Api
 {
     [Route("api/[controller]")]
     public class MyInfoController : Controller

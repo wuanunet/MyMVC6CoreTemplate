@@ -1,12 +1,12 @@
-﻿using MyMVC6Template.Core.Common;
-using MyMVC6Template.Core.Interfaces.Repositories;
-using MyMVC6Template.Core.Models.Entities;
+﻿using MyMVC6CoreTemplate.Core.Common;
+using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
+using MyMVC6CoreTemplate.Core.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyMVC6Template.Core.Repositories
+namespace MyMVC6CoreTemplate.Core.Repositories
 {
 
     public class MyInfoRepository : IMyInfoRepository

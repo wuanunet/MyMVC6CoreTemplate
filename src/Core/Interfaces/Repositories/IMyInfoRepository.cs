@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MyMVC6Template.Core.Models.Entities;
+using MyMVC6CoreTemplate.Core.Models.Entities;
 
-namespace MyMVC6Template.Core.Interfaces.Repositories
+namespace MyMVC6CoreTemplate.Core.Interfaces.Repositories
 {
     public interface IMyInfoRepository
     {

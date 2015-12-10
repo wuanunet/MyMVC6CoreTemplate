@@ -8,15 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Others", "3.Others", "{6A
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6Template.Core", "src\Core\MyMVC6Template.Core.xproj", "{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6Template.Web", "src\Web\MyMVC6Template.Web.xproj", "{9CAB7522-9329-417C-B28E-FF7736477662}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Src", "1.Src", "{B5F5599A-7F4C-4148-B91A-46D76AD94B02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Test", "2.Test", "{66BF8465-4748-431C-8A4A-D6AA70B18BE6}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6Template.Core.Test", "test\MyMVC6Template.Core.Test\MyMVC6Template.Core.Test.xproj", "{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Core", "src\Core\MyMVC6CoreTemplate.Core.xproj", "{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Web", "src\Web\MyMVC6CoreTemplate.Web.xproj", "{9CAB7522-9329-417C-B28E-FF7736477662}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Core.Test", "test\Core.Test\MyMVC6CoreTemplate.Core.Test.xproj", "{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
