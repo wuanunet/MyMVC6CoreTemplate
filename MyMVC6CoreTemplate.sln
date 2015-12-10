@@ -18,6 +18,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Web", "s
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Core.Test", "test\Core.Test\MyMVC6CoreTemplate.Core.Test.xproj", "{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyMVC6CoreTemplate.Web.Test", "test\Web.Test\MyMVC6CoreTemplate.Web.Test.xproj", "{4036A47E-7352-4329-9056-36A4AE917BE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{566B1EAB-AC46-4F6B-89A2-D3F16CC98707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4036A47E-7352-4329-9056-36A4AE917BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4036A47E-7352-4329-9056-36A4AE917BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4036A47E-7352-4329-9056-36A4AE917BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4036A47E-7352-4329-9056-36A4AE917BE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +50,6 @@ Global
 		{FC3EA658-45DB-4B9C-BBD3-BF52F2AFD01A} = {B5F5599A-7F4C-4148-B91A-46D76AD94B02}
 		{9CAB7522-9329-417C-B28E-FF7736477662} = {B5F5599A-7F4C-4148-B91A-46D76AD94B02}
 		{566B1EAB-AC46-4F6B-89A2-D3F16CC98707} = {66BF8465-4748-431C-8A4A-D6AA70B18BE6}
+		{4036A47E-7352-4329-9056-36A4AE917BE1} = {66BF8465-4748-431C-8A4A-D6AA70B18BE6}
 	EndGlobalSection
 EndGlobal
