@@ -15,16 +15,15 @@ using MyMVC6CoreTemplate.Core.Interfaces.Repositories;
 
 namespace MyMVC6CoreTemplate.Web
 {
-    public class StartupFake
+    public class Startup
     {
         //public IConfigurationRoot Configuration { get; set; }
         private IServiceCollection _Services;
 
-        public StartupFake(IHostingEnvironment env)
+        public Startup(IHostingEnvironment env)
         {
-            AppHelper.RootPath = env.WebRootPath;
             // Set up configuration sources.
-            //AppHelper.InitAppConfiguration();
+            AppHelper.RootPath = env.WebRootPath;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -69,6 +68,6 @@ namespace MyMVC6CoreTemplate.Web
         }
 
         // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<StartupFake>(args);
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
